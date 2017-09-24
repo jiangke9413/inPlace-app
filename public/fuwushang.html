@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="baidu-site-verification" content="7uCVhIaDKW">
+	<meta content="telephone=no" name="format-detection">
+	<meta name="keywords" content="到位，到家，上门服务，家政服务，上门维修，上门按摩，搬家，北京家政服务，上海家政服务">
+	<meta name="description" content="到位是中国领先的O2O上门服务平台，汇聚上万种高品质到家服务。家政服务，上门按摩，上门维修，搬家，一站直约，安心到家。现已覆盖北京，上海，深圳，广州，杭州等70多个城市。">
+	<title>到位APP - 高品质上门服务直约平台，家政服务，上门按摩，上门维修，搬家，安心到家！</title>
+	<link rel="shortcut icon" href="http://www.daoway.cn/img/favicon.png">
+	<link href="css/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+<!--header-->
+<header id="header" class="transparent">
+	<div class="sticky-wrapper">
+		<nav class="navbar navbar-default navbar-transparent navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand navbar-brand-img" href="/">
+						<img src="img/logo.png" class="img-responsive" alt="logo">
+					</a>
+				</div>
+				<div class="collapse navbar-collapse navbar-right" id="main-menu">
+					<ul class="nav navbar-nav" id="navbar-nav">
+						<li id="position">
+							<a href="/position">
+								<img src="img/citypoint.png" width="20" height="auto">
+								<i id="showCity" style="margin-right:5px;color:#000">北京</i>
+								<i id="city">切换城市</i>
+							</a>
+						</li>
+						<li class="active">
+							<a href="/">
+								首页
+							</a>
+						</li>
+						<li>
+							<a href="/downloadAPP.html">
+								下载APP
+							</a>
+						</li>
+						<li>
+							<a href="/service.html">服务商</a>
+						</li>
+						<li>
+							<a href="/information.html">商家入驻</a>
+						</li>
+						<li>
+							<a href="/aboutus.html">
+								关于我们
+							</a>
+						</li>
+						<li class="shanghu-right" style="margin-right:10px;">
+							<a id="shanghu" class="shanghu" target="_blank" href="/login.html">
+								商家登录
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+</header>
+<!--标题部分-->
+<div id="title" class="htit">
+	<script id="titlecenter" type="text/html">
+		<div class="htit-center">
+			<div class="htit-left">
+				<b>{{name}}</b>
+				<i>营业时间：<em>{{info.servetime}}</em></i>
+				<i>最近可预约时间：<em>{{info.subscribeDate}} {{info.subscribeTime}}</em></i>
+			</div>
+			<div class="htit-right">
+				<ul class="clearfix">
+					<li><i>{{info.bill}}</i>成功接单<em>|</em></li>
+					<li><i>{{info.billrate}}%</i>接单率<em>|</em></li>
+					<li><i>{{info.goodratings}}%</i>好评率</li>
+				</ul>
+			</div>
+		</div>
+	</script>
+</div>
+<!--二级导航条-->
+<div class="navtit">
+	<ul class="navi">
+		<li class="slibingsclor"><a href="javascript:;">服务项目</a></li>
+		<li id="infro" class=""><a href="javascript:;">商家简介</a></li>
+		<li class=""><a href="javascript:;">用户评论</a></li>
+	</ul>
+</div>
+<div class="service-center content" style="margin-top: 22px">
+	<div class="centerleft" style="background: #fff">
+		<h3>
+			<span class="paihang"><i class="activity">服务项目</i></span>
+		</h3>
+		<div id="serviceList">
+			<script id="serviceItem" type="text/html">
+		        {{each fuwuItem}}
+		        <div class="boxtab xianshi">
+			        <div id="{{$value.detailId}}" class="ctop ctopH" style="height: 200px;">
+				        <img class="pic" src="{{$value.img}}" width="150" height="150">
+				        <span class="spm spm2">
+	                        <i>{{$value.title}}</i>
+		                    <i style="color: #929292">{{$value.serveDisc}}</i>
+		                    <i class="price"><b style="margin-left: 0">{{$value.price}}<em>元/{{$value.time}}小时</em></b>
+			                    {{if $value.oldPrice}}
+	                                <b class="oldpic">原价 <em>{{$value.oldPrice}}</em></b>
+			                    {{/if}}
+		                    </i>
+                        </span>
+				        <span class="spf">已售<i>{{$value.sold}}</i></span>
+			        </div>
+
+		        </div>
+		        {{/each}}
+			</script>
+		</div>
+
+
+		<div id="intro2" class="fenye" style="display: block; background: #f8f8f8; height: 70px">
+
+		</div>
+		<h3>
+			<span class="paihang"><i class="activity">商家简介</i></span>
+		</h3>
+		<div id="sDiscribe">
+			<script id="discribe" type="text/html">
+				<div class="company">{{info.company}}
+					{{if info.verify}}
+					<img src="img/renzheng.jpg">
+					{{/if}}
+				</div>
+
+				<p id="prfile" class="profile">{{info.discribe}}</p>
+
+			</script>
+		</div>
+
+
+
+		<div style="width: 100%; border-top: 10px solid #f8f8f8"></div>
+
+		<div id="commentList">
+			<script id="comment" type="text/html">
+				<h3>
+				<span class="paihang">
+					<i class="activity">用户评论</i>
+					<em>({{comments.length}}条评论)</em>
+				</span>
+				</h3>
+				<div id="commentDiv">
+					{{each comments}}
+					<div class="conmentss">
+						<img class="touxiang" src="{{$value.avatar}}" width="40" height="40">
+						<ul>
+							<li>{{$value.username}}</li>
+							<li>
+                        <span id="star">
+	                        <span class="noColor">
+		                        {{each $value.rates}}
+                                      <img src="img/{{$value}}_star.png" width="10px" height="auto">
+		                        {{/each}}
+                            </span>
+                        </span>
+								<em>{{$value.date}}</em>
+							</li>
+							<li class="commentdetail">{{$value.comment}}</li>
+							<li class="commentposition"><img src="img/position.jpg" width="9" height="11">{{$value.location}}</li>
+
+						</ul>
+					</div>
+					{{/each}}
+				</div>
+				<div class="fenye2">
+					<a href="#profile" class="pageup greycolor">&lt;上一页</a>
+					<div id="showPage" style="display: inline-block">
+
+						<a href="#profile" class="num acv">1</a>
+
+					</div>
+					<a href="#profile" class="pagedown ">下一页&gt;</a>
+				</div>
+
+			</script>
+		</div>
+	</div>
+	<div class="centerright">
+		<div class="rightct" style="border: none;">
+			<div class="erweima erweima2"><i id="qrcode"></i></div>
+			<div class="erweima erweima3"><img src="img/daowayApp.png" width="130" height="auto"></div>
+		</div>
+	</div>
+</div>
+<!--footer 部分-->
+<div class="baozhang" id="baozhang">
+	<h2>到位<i>服务</i>保障</h2>
+	<p>到位平台担保交易安全，交易未成功100%退款</p>
+</div>
+<div class="servi">
+	<ul>
+		<li><img src="img/anquan.jpg" width="20" height="20">优选服务</li>
+		<li><img src="img/anquan.jpg" width="20" height="20">全程保障</li>
+		<li><img src="img/anquan.jpg" width="20" height="20">安全无忧</li>
+	</ul>
+</div>
+<div id="fooerstr">
+	<footer class="footer"><dl><dt>热门城市</dt><dd><i>北京</i><i>上海</i><i>广州</i><i>深圳</i><i>成都</i><i>天津</i><i>南京</i><i>杭州</i><i>重庆</i><i>苏州</i><i>武汉</i><i>长沙</i><i>济南</i><i>郑州</i><i>西安</i><i>沈阳</i><i>福州</i><i>厦门</i><i>南昌</i><i>合肥</i><i>宁波</i><i>无锡</i><i>青岛</i><i>大连</i><i>东莞</i><i>佛山</i><i>石家庄</i><i>哈尔滨</i><i>太原</i><i>昆明</i><i>贵阳</i><i>南宁</i><i>温州</i> </dd></dl></footer>
+	<div class="beian">
+		<p class="htit" id="htit">合作伙伴</p>
+		<ul class="hezuo">
+			<li>
+				<a href="http://www.shifendaojia.com" target="_blank">
+					<img src="img/shangjia/guanjia.jpg">
+				</a>
+			</li>
+			<li>
+				<a href="http://www.51jiaxiu.com" target="_blank">
+					<img src="img/shangjia/hua.jpg">
+				</a>
+			</li>
+			<li>
+				<a href="http://www.qinglaihealth.com" target="_blank">
+					<img src="img/shangjia/hushi.png">
+				</a>
+			</li>
+			<li>
+				<a href="http://www.xiujiadian.com" target="_blank">
+					<img src="img/shangjia/jiaji.jpg">
+				</a>
+			</li>
+			<li>
+				<a href="http://www.emeidaojia.com/" target="_blank">
+					<img src="img/shangjia/jiawu.png">
+				</a>
+			</li>
+			<li>
+				<a href="http://bj.lairen.com/" target="_blank">
+					<img src="img/shangjia/jiaxiu.jpg">
+				</a>
+			</li>
+			<li>
+				<a href="http://www.qiaocat.com/" target="_blank">
+					<img src="img/shangjia/jiazheng.png">
+				</a>
+			</li>
+			<li>
+				<a href="http://www.yueguanjia.com/" target="_blank">
+					<img src="img/shangjia/kala.jpg">
+				</a>
+			</li>
+			<li>
+				<a href="http://weadoc.com/" target="_blank">
+					<img src="img/shangjia/lairen.jpg">
+				</a>
+			</li>
+			<li>
+				<a href="http://www.580jz.cn/" target="_blank">
+					<img src="img/shangjia/lidashi.jpg">
+				</a>
+			</li>
+			<li>
+				<a href="http://www.580jz.cn/" target="_blank">
+					<img src="img/shangjia/meidao.jpg">
+				</a>
+			</li>
+			<li>
+				<a href="http://www.580jz.cn/" target="_blank">
+					<img src="img/shangjia/meidao.png">
+				</a>
+			</li>
+			<li>
+				<a href="http://www.580jz.cn/" target="_blank">
+					<img src="img/shangjia/mifeng.jpg">
+				</a>
+			</li>
+			<li>
+				<a href="http://www.580jz.cn/" target="_blank">
+					<img src="img/shangjia/qiaomao.png">
+				</a>
+			</li>
+			<li>
+				<a href="http://www.580jz.cn/" target="_blank">
+					<img src="img/shangjia/shanxiu.jpg">
+				</a>
+			</li>
+			<li>
+				<a href="http://www.580jz.cn/" target="_blank">
+					<img src="img/shangjia/weixiu.jpg">
+				</a>
+			</li>
+			<li>
+				<a href="http://www.580jz.cn/" target="_blank">
+					<img src="img/shangjia/xiaohushi.jpg">
+				</a>
+			</li>
+			<li>
+				<a href="http://www.580jz.cn/" target="_blank">
+					<img src="img/shangjia/zuomu.jpg">
+				</a>
+			</li>
+		</ul>
+	</div>
+	<div class="beianinfo">
+		<p>©2015 版权所有  到位 daoway.com 京ICP备15001471号-1 北京邻家科技有限公司</p>
+	</div>
+</div>
+<script type="text/javascript" src="js/template-web.js"></script>
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript" src="js/qrcode.js"></script>
+<script type="text/javascript">
+	$(function () {
+		// 定义获取url中请求参数的方法
+		function GetQueryString(name) {
+			var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			var r = window.location.search.substr(1).match(reg);
+			if(r!=null)return  unescape(r[2]);
+			return null;
+		}
+		// 获取服务商的ID
+		let serviceID = GetQueryString('serviceId');
+
+		// 发送请求获取数据
+		$.get('/service', function (res) {
+			if (res.code === 0) {
+			    var service = res.data
+//				console.log(service);
+			}
+			// 获取三部分数据
+			var fuwushang = service.fuwushang.filter(function (value,index) {
+				return value.serviceId == serviceID;
+			});
+
+			var fuwuItem = service.service.filter(function (value,index) {
+				return value.serviceId == serviceID
+			})
+			var fuwu = {fuwuItem}
+			// console.log(fuwuItem)
+			var comments = service.comments.filter(function (value, index) {
+				return value.serviceId == serviceID;
+			});
+			var comm = {comments}
+
+
+			// 标题部分的模板渲染
+			var titleCenter = template('titlecenter', fuwushang[0]);
+			$('#title').append(titleCenter);
+
+			var fuwuList = template('serviceItem', fuwu);
+			$('#serviceList').append(fuwuList);
+
+
+			// 渲染公司描述
+			var discribe = template('discribe', fuwushang[0]);
+			$('#sDiscribe').append(discribe);
+
+			// 渲染评论列表
+			var comments = template('comment', comm);
+			$('#commentList').append(comments);
+
+
+			// 点击定位到具体的项目
+			$('.navi li').click(function () {
+				var pHeight = $('#prfile').outerHeight(true)*1;
+				// 获取列表数量
+				var i = fuwuItem.length;
+				// 三个项目分别滚动不同的高度
+				if ($(this).index()=== 0) {
+					$('body').scrollTop(212);
+				}else if ($(this).index()=== 1) {
+					$('body').scrollTop(342+200*i);
+				}else if ($(this).index()=== 2) {
+					$('body').scrollTop(462+200*i+pHeight);
+				}
+			});
+
+			// 给每一服务绑定点击事件
+			$('.ctop').click(function () {
+				console.log(this.id)
+				window.location.href = "/detail.html?detailId="+this.id;
+			})
+
+			var qrcode = new QRCode('qrcode', {
+				text: 'http://localhost:3000/fuwushang.html?serviceId='+serviceID,
+				width: 115,
+				height: 115,
+				colorDark : '#000000',
+				colorLight : '#ffffff',
+				correctLevel : QRCode.CorrectLevel.H
+			});
+
+
+		});
+		// 用事件委托的方式 绑定单击事件
+		$('.navi').delegate('li', 'click', function () {
+			$('.navi li').removeClass('slibingsclor');
+			$(this).addClass('slibingsclor');
+		});
+
+
+	});
+</script>
+</body>
+</html>
